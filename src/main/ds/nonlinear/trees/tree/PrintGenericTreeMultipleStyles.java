@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class PrintTreeMultipleStyles {
+public class PrintGenericTreeMultipleStyles {
 
     public static void main(String[] args) {
         Node root = new Node(10);
@@ -71,7 +71,7 @@ public class PrintTreeMultipleStyles {
             System.out.print(tempNode.data + " ");
             tempStack.addAll(tempNode.childNodes);
             if (nodeStack.size() == 0) {
-                nodeStack =  tempStack;
+                nodeStack = tempStack;
                 tempStack = new Stack<>();
                 System.out.println();
             }
@@ -97,4 +97,38 @@ public class PrintTreeMultipleStyles {
             this.data = data;
         }
     }
+
+    static class GenericTreeConstruct {
+        public static Node construct(int[] numbers) {
+            Stack<Node> nodeStack = new Stack<>();
+            Node root = null;
+            // loop i->n numbers
+            // number -> node create
+            // condition if -1 -> pop node and get Top node from stack
+            // else - push node to stack
+            for (int num : numbers) {
+                if (num == -1) {
+                    Node poppedChild = nodeStack.pop();
+                    if (nodeStack.size() > 0) {
+                        Node peekParent = nodeStack.peek();
+                        peekParent.childNodes.add(poppedChild);
+                    } else {
+                        root = poppedChild;
+                    }
+                } else {
+                    Node node = new Node(num);
+                    nodeStack.push(node);
+                }
+            }
+            return root;
+        }
+
+        public static void main(String[] args) {
+            int[] nums = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
+            Node node = construct(nums);
+            printLevelOrderTraversal(node);
+        }
+    }
+
+
 }
