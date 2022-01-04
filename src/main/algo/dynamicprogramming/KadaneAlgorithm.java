@@ -1,4 +1,4 @@
-package algo.dynamicprogramming;
+package main.algo.dynamicprogramming;
 
 public class KadaneAlgorithm {
 //    https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm

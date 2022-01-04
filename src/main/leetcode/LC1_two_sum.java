@@ -1,7 +1,7 @@
-package practice.leetcode;
+package main.leetcode;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +34,7 @@ public class LC1_two_sum {
         int [] input = {2,7,11,15};
         int target = 9;
         int [] expected = {0,1};
-        Assertions.assertArrayEquals(expected, twoSum(input,target));
+        Assert.assertArrayEquals(expected, twoSum(input,target));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class LC1_two_sum {
         int [] input = {3,2,4};
         int target = 6;
         int [] expected = {1,2};
-        Assertions.assertArrayEquals(expected, twoSum(input,target));
+        Assert.assertArrayEquals(expected, twoSum(input,target));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class LC1_two_sum {
         int [] input = {3,3};
         int target = 6;
         int [] expected = {0,1};
-        Assertions.assertArrayEquals(expected, twoSum(input,target));
+        Assert.assertArrayEquals(expected, twoSum(input,target));
     }
 
     @Test
@@ -58,6 +58,6 @@ public class LC1_two_sum {
         int [] input = {};
         int target = 0;
         int [] expected = {};
-        Assertions.assertArrayEquals(expected, twoSum(input,target));
+        Assert.assertArrayEquals(expected, twoSum(input,target));
     }
 }

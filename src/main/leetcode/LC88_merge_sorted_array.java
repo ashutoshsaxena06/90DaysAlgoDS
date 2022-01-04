@@ -1,4 +1,4 @@
-package practice.leetcode;
+package main.leetcode;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

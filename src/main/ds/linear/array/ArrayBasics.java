@@ -1,4 +1,4 @@
-package ds.linear.array;
+package main.ds.linear.array;
 
 public class ArrayBasics {
 
